@@ -1,0 +1,38 @@
+menu "FRAM"
+
+    config FRAM_ADDRESS
+        hex "Address [HEX]"
+        range 0x0 0xFF
+        default 0x50
+        help
+            FRAM address on I2C.
+    
+    config FRAM_SIZE
+        hex "Size in bytes [hex]"
+        range 0x0 0xFFFF
+        default 0x200
+        help
+            Size of the memory in words (bytes).
+    
+    config FRAM_PAGE_SIZE
+        hex "Page size in bytes [hex]"
+        range 0x0 0xFFFF
+        default 0x100
+        help
+            Page size (bytes).
+
+    config FRAM_COMMAND_TIMEOUT
+        int "Command timeout (ms)"
+        range 0 10000
+        default 20
+        help
+            Set the timeout of a command (ms).
+    
+    config FRAM_WAIT_TIME
+        int "Wait time (ms)"
+        range 0 10000
+        default 10
+        help
+            Set the wait time between commands (ms).
+
+endmenu
